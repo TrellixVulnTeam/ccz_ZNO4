@@ -57,9 +57,7 @@ services:
       - SMS_SERVICE_ENDPOINT
     depends_on:
       - email-service
-
   #      - sms-svc # commented for demo
-
     networks:
       - internal_access
 
@@ -77,15 +75,10 @@ services:
       - external_access # aliyun access
 
 # commented for demo
-
 #  sms-service:
-
 #    build: ./sms-svc
-
 #    image: sms-svc
-
 #    environment:
-
 #      - SPRING_PROFILES_ACTIVE=test
 
   whoami-service:
@@ -106,19 +99,12 @@ services:
       - internal_access
 
 # commented for demo
-
 #  ical-service:
-
 #    build: ./ical-svc
-
 #    image: ical-svc
-
 #    environment:
-
 #      - SPRING_PROFILES_ACTIVE=test
-
 #    depends_on:
-
 #      - company-service
 
   www-service:
@@ -156,9 +142,7 @@ services:
       - company-service
       - www-service
       - whoami-service
-
 #      - ical-service # commented for demo
-
       - myaccount-service
       - app-service
     networks:
